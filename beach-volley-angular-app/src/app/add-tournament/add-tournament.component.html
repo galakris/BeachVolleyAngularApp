@@ -1,3 +1,55 @@
-<p>
-  add-tournament works!
-</p>
+<div class="card bg-dark offset-sm-3 col-sm-6 mt-2" >
+
+  <h5 class="card-header bg-warning text-dark text-center py-4 mb-3">
+    <strong>DODAJ TURNIEJ</strong>
+  </h5>
+  <!--class="offset-sm-2 offset-md-3 col-sm-8 col-md-6 bg-dark rounded"-->
+  <form  name="form" #f="ngForm" (submit)="addTournament()" no-validate class="tournament-form" >
+    <div class="form-group">
+      <input type="text" id="name" name="name" class="form-control" placeholder="Nazwa turnieju" [(ngModel)]="model.name" name="name"/>
+    </div>
+
+    <div class="form-group">
+      <label class="text-warning ml-1">Kategoria:</label>
+      <div class="form-check-inline text-warning">
+        <div >
+          <input class="text-warning form-check-input col-auto ml-1" text="Open" value="open" type="radio" >
+          <input class="text-warning form-check-input col-auto ml-1" text="Kobiety" value="women" type="radio" >
+          <input class="text-warning form-check-input col-auto ml-1" text="Mężczyźni" value="men" type="radio" >
+          <input class="text-warning form-check-input col-auto ml-1" text="Mixty" value="mix" type="radio" >
+        </div>
+      </div>
+    </div>
+    <div class="form-row form-group">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Miejscowość" [(ngModel)]="model.location.city" name="city">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Ulica" [(ngModel)]="model.location.street"/>
+      </div>
+      <div class="col">
+        <input class="form-control" placeholder="Numer" [(ngModel)]="model.location.number"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Liczba par"/>
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Wpisowe"/>
+    </div>
+
+    <div class="form-group">
+      <input type="date" class="form-control" placeholder="Data" #d="" [(ngModel)]="model.date" [ngModelOptions]="{standalone: true}"/>
+    </div>
+
+    <div class="form-group">
+      <input type="time" class="form-control" placeholder="Godzina" />
+    </div>
+
+    <div class="form-row form-group">
+      <button type="submit" class="btn btn-outline-warning btn-block waves-effect mb-3">Zapisz</button>
+    </div>
+  </form>
+</div>

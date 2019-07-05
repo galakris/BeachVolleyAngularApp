@@ -8,8 +8,10 @@ import { RankingComponent } from './ranking/ranking.component';
 import { AddTournamentComponent } from './add-tournament/add-tournament.component';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {HttpClientModule} from '@angular/common/http';
 
 import {Router, RouterModule, Routes} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -51,6 +53,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],

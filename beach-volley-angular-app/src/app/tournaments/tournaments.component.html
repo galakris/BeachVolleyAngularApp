@@ -1,3 +1,13 @@
-<p>
-  tournaments works!
-</p>
+<div class="container">
+  <br />
+
+  <div class="col-md-4 d-inline-block text-warning p-2" *ngFor="let tournament of tournaments">
+    <div class="bg-dark pl-5 p-3 di">
+      <h1 class="text-center">{{tournament.name}}</h1>
+      <i class="fa fa-venus-mars text-warning"></i> {{tournament.category}}<br />
+      <i class="fa fa-calendar text-warning"></i> {{tournament.date}}<br />
+      <i class="fa fa-clock-o text-warning"></i> {{tournament.time}}<br />
+      <i class="fa fa-map-marker text-warning"></i> {{tournament.city}}<br />
+    </div>
+  </div>
+</div>
